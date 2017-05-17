@@ -2,7 +2,7 @@
 
 include "DierLibrary.php";
 
-$runder = new Koe(150, 120, 250, 550);
+$runder = new Koe(rand(100, 150), rand(80, 120), rand(180, 250), rand(480, 550);
 $KoeArray = array();
 
 echo "<br><br>";
