@@ -2,15 +2,14 @@
 
 include "DierLibrary.php";
 
-$runder = new Koe(rand(100, 150), rand(80, 120), rand(180, 250), rand(480, 550));
 $KoeArray = array();
+$runder = new Koe(180,135,150,550);
 
-//
-//maakt 5
-//
-for($i=0; $i<4; $i++)
+
+for($i=0; $i<5; $i++)
 {
-	$KoeArray[] = $runder;
+	$KoeArray[] = $runder->Reproduceer();
+	
 }
 
 foreach($KoeArray as $koe)
@@ -20,6 +19,9 @@ foreach($KoeArray as $koe)
 	echo "Hoogte: " . $koe->hoogte . "<br>";
 	echo "Breedte: " . $koe->breedte . "<br>";
 	echo "Massa: " . $koe->massa . "<br>";
+	$koe->MaakGeluid();
 	echo "<br><br>";
 }
+
+
 ?>

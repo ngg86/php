@@ -9,26 +9,15 @@
 		
 		public function MaakGeluid()
 		{
-			echo "een geluid";
+			echo "...";
 		}
-	}
-	
-	
-	
-	class Vee extends Dier
-	{
-		public function __construct($lengte, $breedte, $hoogte, $massa)
+		
+		public function Reproduceer()
 		{
-			//
-			// php ' -> ' == c# '  .  ' 
-			// php '$this->lengte' == c# 'this.lengte'
-			//
-			$this->lengte = $lengte;
-			$this->breedte = $breedte;
-			$this->hoogte = $hoogte;
-			$this->massa = $massa;
 		}
 	}
+	
+	
 		
 	class Koe extends Dier
 	{
@@ -44,7 +33,13 @@
 		public function MaakGeluid()
 		{
 			echo "Boe!";
-		}		
+		}	
+
+		public function Reproduceer()
+		{
+			$newkoe = new Koe(rand(100,150),rand(80,120), rand(80,150), rand(400,550));
+			return $newkoe;
+		}
 	}
 
 
