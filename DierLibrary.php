@@ -9,7 +9,6 @@
 		
 		public function MaakGeluid()
 		{
-			//later function oproepen en overriden? 
 			echo "een geluid";
 		}
 	}
@@ -20,6 +19,10 @@
 	{
 		public function __construct($lengte, $breedte, $hoogte, $massa)
 		{
+			//
+			// php ' -> ' == c# '  .  ' 
+			// php '$this->lengte' == c# 'this.lengte'
+			//
 			$this->lengte = $lengte;
 			$this->breedte = $breedte;
 			$this->hoogte = $hoogte;
