@@ -9,19 +9,30 @@ function randomNum()
 
 $KoeArray = array();
 $GeitArray = array();
-$runder = new Koe(randomNum(), randomNum(), randomNum(), randomNum());
-$geitje = new Geit(randomNum(), randomNum(), randomNum(), randomNum());
-$aantalKoeien = 5;
 $aantalGeiten = 10;
 $babyGeit = 25;
 $babyKoe = 15;
+//$geitje = new Geit(randomNum(), randomNum());
+$aantalKoeien = 5;
+
+$totaleGewicht = 0;
+$totaleLengte = 0;
 
 for($i=1; $i<$aantalKoeien; $i++)
 {
-	$KoeArray[] = $runder;
+	$KoeArray[$i] = new Koe(randomNum(), randomNum());
+	
 }
+var_dump($KoeArray);
+foreach($KoeArray as $koe)
+{
+		$totaleLengte += $koe->lengte;
+		$totaleGewicht += $koe->massa;
+}
+echo $totaleGewicht;
+echo "<br>" . $totaleLengte;
 
-for($i=1; $i<$aantalGeiten; $i++)
+/*for($i=1; $i<$aantalGeiten; $i++)
 {
 	$GeitArray[] = $geitje;
 }
@@ -48,7 +59,6 @@ foreach($Stal as $DierArray)
 }
 
 
-/*
 foreach($KoeArray as $koe)
 {
 	echo "Naam: Koe_" . rand(00,99) . "<br>";

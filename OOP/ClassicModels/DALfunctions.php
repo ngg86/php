@@ -21,6 +21,22 @@ function getData($db)
 	return $array;
 }
 
+function dropdown()
+{
+	$db = connect_database('classicmodels');
+	
+	$sql_dropdown = "SELECT * FROM productLines";
+	if(!$result = $db->query($sql_dropdown))
+	{
+		die($db->error);
+	}
+	while($data = $result->fetch_assoc())
+	{
+		echo "<option value=" . $data['productLine'] .">".$data['productLine']."</option>";
+	}
+}
+
+
 
 
 

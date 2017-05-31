@@ -19,13 +19,37 @@
 		
 	class Koe extends Dier
 	{
-		public function __construct($lengte, $breedte, $hoogte, $massa)
+		public function __construct($lengte, $massa)
 		{
-			$this->lengte = $lengte;
-			$this->breedte = $breedte;
-			$this->hoogte = $hoogte;
+			$this->lengte = $lengte;			
 			$this->massa = $massa;
 			
+		}
+		public function __get($name)
+		{
+			switch ($name)
+			{
+				case 'lengte' :
+					return $this->lengte;
+					break;
+				case 'massa' :
+					return $this->massa;
+					break;
+			}
+		}
+		public function __set($name, $value)
+		{
+			switch($name)
+			{
+				case 'lengte' :
+					if($value >= 0)
+						$this->lengte($value);
+						break;
+				case 'massa' :
+					if($value >= 0)
+						$this->massa($value);
+						break;
+			}
 		}
 		
 		public function MaakGeluid()

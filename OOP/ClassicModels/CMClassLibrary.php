@@ -22,7 +22,7 @@ class CMProducts
 			$this->pLine = $pLine;
 			$this->pScale = $pScale;
 			$this->pVendor = $pVendor;
-			$this->pScale = $pScale;
+			$this->pDescription = $pDescription;
 			$this->quantityInStock = $quantityInStock;
 			$this->buyPrice = $buyPrice;
 			$this->MSRP = $MSRP;
@@ -58,6 +58,17 @@ class CMProducts
 		return $array;
     }
 	
+	public static function InsertProduct($product)
+	{
+		$db = new mysqli('localhost','root','usbw','classicmodels');
+		$query = "INSERT INTO products ($product->pCode, $product->pName, $product->pLine, $product->pScale, $product->pVendor, $product->pDescription, $product->quantityInStock, $product->buyPrice, $product->MSRP) VALUES ('productCode','productName','productLine','productScale','productVendor','productDescription','quantityInStock','buyPrice','MSRP');";
+		
+		if(!$resultaat = $db->query($query))
+		{
+			die($db->error);
+		}
+		
+	}
 }
 
 
